@@ -30,6 +30,8 @@ main {
 .team-container {
     display: flex;
     justify-content: center;
+    flex-direction:row;
+    flex-wrap: wrap;
     gap: 50px;
     margin: 20px 0;
 }
@@ -85,6 +87,7 @@ footer {
 
 #leaderboard {
     margin-top: 20px;
+    margin-bottom: 40%;
 }
 
 #leaderboard h3 {

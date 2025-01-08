@@ -1,5 +1,3 @@
-// script.js
-
 let scores = { a: 0, b: 0 }; // Initial scores for both teams
 const maxPoints = 100; // Winning score
 
@@ -36,27 +34,27 @@ function updateUI() {
   }
 }
 
-async function fetchScores() {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbzcawpdqp8tO8rBRB7RlB0SJMyY06Tp0sbddKdrX6gp7NZwl1DfaPdEUks2tKMarRDk/exec");
-    const data = await response.json();
+// async function fetchScores() {
+//     const response = await fetch("https://script.google.com/macros/s/AKfycbzcawpdqp8tO8rBRB7RlB0SJMyY06Tp0sbddKdrX6gp7NZwl1DfaPdEUks2tKMarRDk/exec");
+//     const data = await response.json();
   
-    scores.a = parseInt(data.teamA);
-    scores.b = parseInt(data.teamB);
-    updateUI();
-}
-async function incrementScore(team) {
-    if (scores[team] < maxPoints) {
-      await fetch("https://script.google.com/macros/s/AKfycbzcawpdqp8tO8rBRB7RlB0SJMyY06Tp0sbddKdrX6gp7NZwl1DfaPdEUks2tKMarRDk/exec", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ team: team }),
-      });
+//     scores.a = parseInt(data.teamA);
+//     scores.b = parseInt(data.teamB);
+//     updateUI();
+// }
+// async function incrementScore(team) {
+//     if (scores[team] < maxPoints) {
+//       await fetch("https://script.google.com/macros/s/AKfycbzcawpdqp8tO8rBRB7RlB0SJMyY06Tp0sbddKdrX6gp7NZwl1DfaPdEUks2tKMarRDk/exec", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ team: team }),
+//       });
   
-      // Update scores from the backend
-      fetchScores();
-    }
-}
-document.addEventListener("DOMContentLoaded", fetchScores);
+//       // Update scores from the backend
+//       fetchScores();
+//     }
+// }
+// document.addEventListener("DOMContentLoaded", fetchScores);
 
   
   
