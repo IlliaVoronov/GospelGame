@@ -1,21 +1,43 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  .progress-bar {
-    margin: 20px auto;
-    width: 80%;
-    background-color: #f3f3f3;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  .progress-bar span {
-    display: block;
-    height: 30px;
-    background-color: #4caf50;
-    text-align: center;
-    color: white;
-    line-height: 30px;
-  }
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.progress-bar {
+  margin: 20px auto;
+  width: 80%;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 30px;
+  background-color: #4caf50;
+  text-align: center;
+  color: white;
+  line-height: 30px;
+}
+
+.add-persone {
+  border-radius: 25px;
+  border: 2px solid;
+  width: 200px;
+  height: 150px;
+  background-color: rgb(90, 123, 162);
+  color: white;
+  padding: 1em 1.5em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+.add-persone:hover {
+  background-color: rgb(230, 230, 230);
+  border: 2px solid rgb(90, 123, 162);
+
+  color: rgb(0, 0, 0);
+}

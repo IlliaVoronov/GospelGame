@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
   <title>Team Progress</title>
 </head>
 <body>
@@ -10,26 +11,29 @@
   <div>
     <h2>Awakening Youth</h2>
     <div class="progress-bar">
-      <span id="awakening-progress" style="width: 0%;">0%</span>
+      <span id="awakening-progress" style="width: 50%;">50%</span>
     </div>
   </div>
+
   <div>
     <h2>Momentum Youth</h2>
     <div class="progress-bar">
       <span id="momentum-progress" style="width: 0%;">0%</span>
     </div>
   </div>
-  <a href="https://tally.so/r/wQv8K7">Link to the form to add a persone.</a>
+  <a href="https://tally.so/r/wQv8K7" class="add-persone">Preached to another person.</a>
   <script>
+
     async function fetchProgress() {
       try {
         // Use the local server endpoint
         const response = await fetch('/api/get-progress');
         const data = await response.json();
-  
+
+
         const awakeningPercentage = (data["Awakening Youth"] / data.total) * 100 || 0;
         const momentumPercentage = (data["Momentum Youth"] / data.total) * 100 || 0;
-  
+
         // Update the progress bars and display percentages
         const awakeningProgress = document.getElementById('awakening-progress');
         const momentumProgress = document.getElementById('momentum-progress');
@@ -39,6 +43,8 @@
   
         momentumProgress.style.width = `${momentumPercentage}%`;
         momentumProgress.innerText = `${momentumPercentage.toFixed(1)}%`;
+
+        
       } catch (error) {
         console.error('Error fetching progress:', error);
       }
