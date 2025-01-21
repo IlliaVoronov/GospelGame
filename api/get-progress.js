@@ -1,11 +1,8 @@
 require('dotenv').config();
 const { Client } = require("@notionhq/client");
 
-
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const DATABASE_ID = process.env.DATABASE_ID;
-
-
 
 async function getProgressData() {
   try {
@@ -22,7 +19,7 @@ async function getProgressData() {
 
       response.results.forEach((page) => {
         const teamProperty = page.properties["Team"];
-        const teamNames = teamProperty?.select?.name || "";  // Update to select
+        const teamNames = teamProperty?.select?.name || "";
         if (teamNames === "Awakening youth") awakeningCount++;
         if (teamNames === "Momentum youth") momentumCount++;
       });
@@ -39,8 +36,8 @@ async function getProgressData() {
   } catch (error) {
     console.error("Error fetching data from Notion:", error);
     return {
-      "Awakening youth": 0,
-      "Momentum youth": 0,
+      "Awakening Youth": 0,
+      "Momentum Youth": 0,
       total: 100,
     };
   }
@@ -48,5 +45,5 @@ async function getProgressData() {
 
 module.exports = async (req, res) => {
   const progressData = await getProgressData();
-  res.json(progressData);
+  res.status(200).json(progressData);
 };
