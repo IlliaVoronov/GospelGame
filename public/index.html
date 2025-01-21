@@ -46,10 +46,12 @@
         const momentumProgress = document.getElementById('momentum-progress');
   
         awakeningProgress.style.width = `${awakeningPercentage}%`;
-        awakeningProgress.innerText = `${awakeningPercentage.toFixed(1)} people`;
+        awakeningProgress.innerText = `${Math.round(awakeningPercentage)} people`;
+
   
         momentumProgress.style.width = `${momentumPercentage}%`;
-        momentumProgress.innerText = `${momentumPercentage.toFixed(1)} people`;
+        momentumProgress.innerText = `${Math.round(momentumPercentage)} people`;
+
 
         
       } catch (error) {
