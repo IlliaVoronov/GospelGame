@@ -7,21 +7,28 @@
   <title>Team Progress</title>
 </head>
 <body>
-  <h1>Team Progress</h1>
-  <div>
-    <h2>Awakening Youth</h2>
-    <div class="progress-bar">
-      <span id="awakening-progress" style="width: 50%;">50%</span>
-    </div>
-  </div>
+  <div class="container">
 
-  <div>
-    <h2>Momentum Youth</h2>
-    <div class="progress-bar">
-      <span id="momentum-progress" style="width: 0%;">0%</span>
+    <h1>The goal is to preach to a 100 people!</h1>
+    <div>
+      <h2>Awakening Youth</h2>
+      <div class="progress-bar">
+        <span id="awakening-progress" style="width: 0%;">0 people</span>
+      </div>
     </div>
+
+    <div>
+      <h2>Momentum Youth</h2>
+      <div class="progress-bar">
+        <span id="momentum-progress" style="width: 0%;">0 people</span>
+      </div>
+    </div>
+
+    <div class="add-persone-div">
+      <a href="https://tally.so/r/wQv8K7" class="add-persone">Add a person</a>
+    </div>
+
   </div>
-  <a href="https://tally.so/r/wQv8K7" class="add-persone">Preached to another person.</a>
   <script>
 
     async function fetchProgress() {
@@ -39,10 +46,10 @@
         const momentumProgress = document.getElementById('momentum-progress');
   
         awakeningProgress.style.width = `${awakeningPercentage}%`;
-        awakeningProgress.innerText = `${awakeningPercentage.toFixed(1)}%`;
+        awakeningProgress.innerText = `${awakeningPercentage.toFixed(1)} people`;
   
         momentumProgress.style.width = `${momentumPercentage}%`;
-        momentumProgress.innerText = `${momentumPercentage.toFixed(1)}%`;
+        momentumProgress.innerText = `${momentumPercentage.toFixed(1)} people`;
 
         
       } catch (error) {

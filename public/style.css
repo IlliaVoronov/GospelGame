@@ -1,8 +1,21 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   padding: 20px;
 }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+h1 {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+}
+
+/* PROGRESS-BAR */
 
 .progress-bar {
   margin: 20px auto;
@@ -11,17 +24,26 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   overflow: hidden;
+  text-align: center;
+  color: black;
+
 }
+
 
 .progress-bar span {
   display: block;
   height: 30px;
   background-color: #4caf50;
   text-align: center;
-  color: white;
   line-height: 30px;
 }
 
+/* ADD PERSON LINK-BUTTON */
+
+.add-persone-div {
+  margin-top: 30px;
+  font-size: 80%;
+}
 .add-persone {
   border-radius: 25px;
   border: 2px solid;
